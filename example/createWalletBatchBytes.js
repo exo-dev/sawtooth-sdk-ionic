@@ -10,14 +10,14 @@ const sdk = new SawtoothSdk({
 
 const SAWTOOTH_PAYMENT_PROCESSOR_FAMILY = 'exoexample';
 const EXO_SP_NAMESPACE = sdk.hash(SAWTOOTH_PAYMENT_PROCESSOR_FAMILY).substring(0, 6);
-const fromAddress = EXO_SP_NAMESPACE + sdk.hash(sdk.wallet.getPublic()).slice(0, 64);
+const fromAddress = EXO_SP_NAMESPACE + sdk.hash(sdk.credentials.getPublic()).slice(0, 64);
 
 const payload = {
-    public_key: sdk.wallet.getPublic(),
+    public_key: sdk.credentials.getPublic(),
     type: 0
 };
 const batchBytesWallet = sdk.generateWalletBatchBytes(fromAddress, payload, {
-    batcherPubkey: sdk.wallet.getPublic(),
+    batcherPubkey: sdk.credentials.getPublic(),
     dependencies: [],
     familyName: SAWTOOTH_PAYMENT_PROCESSOR_FAMILY,
     familyVersion: '1.0',
