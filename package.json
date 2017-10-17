@@ -2,9 +2,8 @@
     "name": "sawtooth-sdk-ionic",
     "version": "0.0.1",
     "description": "Sawtooth sdk for web, ionic and angular 2",
-    "main": "dist/sawtooth-sdk.js",
+    "main": "lib/sawtooth-sdk.js",
     "scripts": {
-        "build": "babel lib --presets babel-preset-es2015 --out-dir dist",
         "test": "echo \"Error: no test specified\" && exit 1"
     },
     "repository": {
