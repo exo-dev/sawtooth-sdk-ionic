@@ -40,8 +40,7 @@ var SawtoothSdk = /** @class */ (function () {
         return cryptoJS.SHA512(wordList).toString(cryptoJS.enc.HEX);
     };
     SawtoothSdk.prototype.generateCredentials = function (privateKey) {
-        var credentials = new credentials_1["default"](privateKey);
-        return credentials;
+        return new credentials_1["default"](privateKey);
     };
     SawtoothSdk.prototype.parseTransactionConfig = function (config) {
         return {
@@ -93,7 +92,6 @@ var SawtoothSdk = /** @class */ (function () {
     };
     SawtoothSdk.prototype.encode = function (payload, jsonNamespace) {
         var protobufRoot = this.initProtobuf(jsonNamespace);
-        console.log('data:', payload);
         return protobufRoot.encode(payload).finish();
     };
     SawtoothSdk.prototype.decode = function (encodePayload, jsonNamespace) {
