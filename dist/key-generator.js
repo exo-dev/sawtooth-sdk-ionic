@@ -1,4 +1,5 @@
-'use strict';
+"use strict";
+exports.__esModule = true;
 var secp256k1 = require('secp256k1');
 var cryptoJS = require('crypto-js');
 var randomBytes = require('randombytes');
@@ -85,4 +86,4 @@ var KeyGenerator = /** @class */ (function () {
     };
     return KeyGenerator;
 }());
-module.exports = KeyGenerator;
+exports["default"] = KeyGenerator;

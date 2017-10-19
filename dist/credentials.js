@@ -1,8 +1,9 @@
-'use strict';
-var KeyGenerator = require('./key-generator');
-module.exports = /** @class */ (function () {
+"use strict";
+exports.__esModule = true;
+var key_generator_1 = require("./key-generator");
+var Credentials = /** @class */ (function () {
     function Credentials(privateKey) {
-        this.keyGenerator = new KeyGenerator(privateKey);
+        this.keyGenerator = new key_generator_1["default"](privateKey);
         this.keys = {
             privateKey: this.keyGenerator.getPrivate(),
             publicKey: this.keyGenerator.getPublic()
@@ -20,3 +21,4 @@ module.exports = /** @class */ (function () {
     };
     return Credentials;
 }());
+exports["default"] = Credentials;

@@ -1,7 +1,8 @@
 'use strict';
+exports.__esModule = true;
 var protobuf = require('protobufjs');
 var root = protobuf.Root.fromJSON(require('./protobuf_bundle.json'));
-var Credentials = require('./credentials');
+var credentials_1 = require("./credentials");
 var TransactionHeader = root.lookup('TransactionHeader');
 var Transaction = root.lookup('Transaction');
 var BatchHeader = root.lookup('BatchHeader');
@@ -18,7 +19,7 @@ var SawtoothSdk = /** @class */ (function () {
             this.familyName = config.familyName;
             this.familyVersion = config.familyVersion;
             this.inputs = config.inputs;
-            this.outputs = this.outputs;
+            this.outputs = config.outputs;
             this.payloadEncoding = config.payloadEncoding || 'application/protobuf';
             this.signerPubkey = config.signerPubkey;
             this.payloadEncoder = config.payloadEncoder;
@@ -38,7 +39,7 @@ var SawtoothSdk = /** @class */ (function () {
         return cryptoJS.SHA512(wordList).toString(cryptoJS.enc.HEX);
     };
     SawtoothSdk.prototype.generateCredentials = function (privateKey) {
-        var credentials = new Credentials(privateKey);
+        var credentials = new credentials_1["default"](privateKey);
         return credentials;
     };
     SawtoothSdk.prototype.parseTransactionConfig = function (config) {
@@ -55,10 +56,11 @@ var SawtoothSdk = /** @class */ (function () {
             payloadEncoder: config.transactionEncoder || this.transactionEncoder
         };
     };
-    SawtoothSdk.prototype.generateWalletBatchBytes = function (adminAddress, payload, config) {
+    SawtoothSdk.prototype.generateTransactionBatchBytes = function (adminAddress, payload, config) {
         var privateKey = config.privateKey || this.credentials.getPrivate();
         var credentials = this.generateCredentials(privateKey);
         var encodedPayload = this.transactionEncoder(payload);
+        console.log('CONFIG', config);
         var parsedConfig = this.parseTransactionConfig(config);
         parsedConfig.payloadSha512 = this.hash(encodedPayload);
         var header = TransactionHeader.encode(parsedConfig).finish();
@@ -91,6 +93,7 @@ var SawtoothSdk = /** @class */ (function () {
     };
     SawtoothSdk.prototype.encode = function (payload, jsonNamespace) {
         var protobufRoot = this.initProtobuf(jsonNamespace);
+        console.log('data:', payload);
         return protobufRoot.encode(payload).finish();
     };
     SawtoothSdk.prototype.decode = function (encodePayload, jsonNamespace) {
@@ -110,4 +113,5 @@ var SawtoothSdk = /** @class */ (function () {
     };
     return SawtoothSdk;
 }());
+exports["default"] = SawtoothSdk;
 module.exports = SawtoothSdk;

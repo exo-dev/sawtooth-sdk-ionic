@@ -41,9 +41,9 @@ console.log('batchBytesWallet: ', batchBytesWallet);
 
 * install development branch:
 ```
-npm i --save npm i git://github.com:exo-dev/sawtooth-sdk-ionic#development --save
+npm i --save git://github.com:exo-dev/sawtooth-sdk-ionic#development --save
 ```
 * install:
 ```
-npm i --save npm i git://github.com:exo-dev/sawtooth-sdk-ionic --save
+npm i --save git://github.com:exo-dev/sawtooth-sdk-ionic --save
 ```
