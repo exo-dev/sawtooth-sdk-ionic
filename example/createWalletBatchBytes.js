@@ -16,7 +16,7 @@ const payload = {
     public_key: sdk.credentials.getPublic(),
     type: 0
 };
-const batchBytesWallet = sdk.generateWalletBatchBytes(fromAddress, payload, {
+const batchBytesWallet = sdk.generateTransactionBatchBytes(fromAddress, payload, {
     batcherPubkey: sdk.credentials.getPublic(),
     dependencies: [],
     familyName: SAWTOOTH_PAYMENT_PROCESSOR_FAMILY,
