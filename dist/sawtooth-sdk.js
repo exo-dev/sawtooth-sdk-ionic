@@ -106,11 +106,6 @@ var SawtoothSdk = /** @class */ (function () {
     SawtoothSdk.prototype.transactionDecoder = function (data) {
         return this.decode(data, 'TransactionPayload');
     };
-    SawtoothSdk.prototype.generateNonce = function () {
-        var dateString = Date.now().toString(36).slice(-5);
-        var randomString = Math.floor(Math.random() * 46655).toString(36);
-        return dateString + ('00' + randomString).slice(-3);
-    };
     return SawtoothSdk;
 }());
 exports["default"] = SawtoothSdk;
