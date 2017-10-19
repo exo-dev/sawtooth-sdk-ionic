@@ -1,4 +1,4 @@
-'use strict';
+"use strict";
 exports.__esModule = true;
 var protobuf = require('protobufjs');
 var root = protobuf.Root.fromJSON(require('./protobuf_bundle.json'));
@@ -23,6 +23,7 @@ var SawtoothSdk = /** @class */ (function () {
             this.payloadEncoding = config.payloadEncoding || 'application/protobuf';
             this.signerPubkey = config.signerPubkey;
             this.payloadEncoder = config.payloadEncoder;
+            this.jsonDescriptor = config.jsonDescriptor || jsonDescriptor;
             if (config.privateKey) {
                 this.credentials = this.generateCredentials(config.privateKey);
             }
@@ -60,7 +61,6 @@ var SawtoothSdk = /** @class */ (function () {
         var privateKey = config.privateKey || this.credentials.getPrivate();
         var credentials = this.generateCredentials(privateKey);
         var encodedPayload = this.transactionEncoder(payload);
-        console.log('CONFIG', config);
         var parsedConfig = this.parseTransactionConfig(config);
         parsedConfig.payloadSha512 = this.hash(encodedPayload);
         var header = TransactionHeader.encode(parsedConfig).finish();
@@ -88,7 +88,7 @@ var SawtoothSdk = /** @class */ (function () {
         return dateString + ('00' + randomString).slice(-3);
     };
     SawtoothSdk.prototype.initProtobuf = function (jsonNamespace) {
-        var tmpRoot = protobuf.Root.fromJSON(jsonDescriptor);
+        var tmpRoot = protobuf.Root.fromJSON(this.jsonDescriptor);
         return tmpRoot.lookupType(jsonNamespace);
     };
     SawtoothSdk.prototype.encode = function (payload, jsonNamespace) {
