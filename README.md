@@ -2,6 +2,8 @@
 [![Test Coverage](https://api.codeclimate.com/v1/badges/652d82813e5fc649f85f/test_coverage)](https://codeclimate.com/github/exo-dev/sawtooth-sdk-ionic/test_coverage)
 # sawtooth-sdk-ionic
 
+[![Greenkeeper badge](https://badges.greenkeeper.io/exo-dev/sawtooth-sdk-ionic.svg)](https://greenkeeper.io/)
+
 ## usage:
 
 ```javascript
