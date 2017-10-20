@@ -1,5 +1,7 @@
 # sawtooth-sdk-ionic
 
+[![Greenkeeper badge](https://badges.greenkeeper.io/exo-dev/sawtooth-sdk-ionic.svg)](https://greenkeeper.io/)
+
 ## usage:
 
 ```javascript
