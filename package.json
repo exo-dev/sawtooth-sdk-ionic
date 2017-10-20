@@ -1,0 +1,41 @@
+{
+    "name": "sawtooth-sdk-ionic",
+    "version": "0.0.1",
+    "description": "Sawtooth sdk for web, ionic and angular 2",
+    "main": "dist/sawtooth-sdk.js",
+    "scripts": {
+        "test": "echo \"Error: no test specified\" && exit 1",
+        "build": "tsc"
+    },
+    "repository": {
+        "type": "git",
+        "url": "git+https://github.com/exo-dev/sawtooth-sdk-ionic.git"
+    },
+    "keywords": [
+        "sawtooth",
+        "sdk",
+        "ionic",
+        "typescript",
+        "web"
+    ],
+    "author": "",
+    "license": "MIT",
+    "bugs": {
+        "url": "https://github.com/exo-dev/sawtooth-sdk-ionic/issues"
+    },
+    "homepage": "https://github.com/exo-dev/sawtooth-sdk-ionic#readme",
+    "dependencies": {
+        "buffer": "^5.0.8",
+        "crypto-js": "^3.1.9-1",
+        "protobufjs": "^6.8.0",
+        "randombytes": "^2.0.5",
+        "secp256k1": "^3.3.0"
+    },
+    "devDependencies": {
+        "@exo-dev/eslint-config-exo-es6": "^1.0.0",
+        "babel-cli": "^6.26.0",
+        "babel-preset-es2015": "^6.24.1",
+        "eslint": "^4.8.0",
+        "typescript": "^2.5.3"
+    }
+}

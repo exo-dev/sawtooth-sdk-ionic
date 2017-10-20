@@ -1,22 +1,14 @@
-# sawtooth-sdk-ionic
-
-## usage:
-
-```javascript
-import * as SawtoothSdk from 'sawtooth-sdk-ionic';
-```
-
-### Create batchBytesWallet
-```javascript
+'use strict';
+const SawtoothSdk = require('./lib/sawtooth-sdk');
 const sdk = new SawtoothSdk({
     dependencies: [],
     familyVersion: '1.0',
     payloadEncoding: 'application/protobuf',
-    privateKey: '65da52d50dc235f904872d0b7f13bc1717a257c9a9d39d928d9f30e1db1b27bd'//optional
+    privateKey: '65df52d50dc235f904872d0b7f14ac1517a267c9a9d49d928e9f3071db1b27bd'
 });
 
 
-const SAWTOOTH_PAYMENT_PROCESSOR_FAMILY = 'exosexample';
+const SAWTOOTH_PAYMENT_PROCESSOR_FAMILY = 'exoexample';
 const EXO_SP_NAMESPACE = sdk.hash(SAWTOOTH_PAYMENT_PROCESSOR_FAMILY).substring(0, 6);
 const fromAddress = EXO_SP_NAMESPACE + sdk.hash(sdk.credentials.getPublic()).slice(0, 64);
 
@@ -35,15 +27,3 @@ const batchBytesWallet = sdk.generateTransactionBatchBytes(fromAddress, payload,
 });
 
 console.log('batchBytesWallet: ', batchBytesWallet);
-
-```
-## installation:
-
-* install development branch:
-```
-npm i --save git://github.com:exo-dev/sawtooth-sdk-ionic#development --save
-```
-* install:
-```
-npm i --save git://github.com:exo-dev/sawtooth-sdk-ionic --save
-```
