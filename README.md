@@ -1,3 +1,5 @@
+[![Maintainability](https://api.codeclimate.com/v1/badges/652d82813e5fc649f85f/maintainability)](https://codeclimate.com/github/exo-dev/sawtooth-sdk-ionic/maintainability)
+[![Test Coverage](https://api.codeclimate.com/v1/badges/652d82813e5fc649f85f/test_coverage)](https://codeclimate.com/github/exo-dev/sawtooth-sdk-ionic/test_coverage)
 # sawtooth-sdk-ionic
 
 ## usage:
