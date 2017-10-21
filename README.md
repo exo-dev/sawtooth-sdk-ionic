@@ -5,7 +5,17 @@
 ```javascript
 import * as SawtoothSdk from 'sawtooth-sdk-ionic';
 ```
-
+### config protobuf json added
+now it is possible to pass as jsonDescriptor parameter that configures protobuf to decode
+```javascript
+const configJson = require('some/path/protobuf.config.json');
+const sdk = new SawtoothSdk({
+    dependencies: [],
+    familyVersion: '1.0',
+    payloadEncoding: 'application/protobuf',
+    jsonDescriptor: configJson,
+});
+```
 ### Create batchBytesWallet
 ```javascript
 const sdk = new SawtoothSdk({
@@ -47,3 +57,11 @@ npm i --save git://github.com:exo-dev/sawtooth-sdk-ionic#development --save
 ```
 npm i --save git://github.com:exo-dev/sawtooth-sdk-ionic --save
 ```
+
+## methods:
+* hash: return sha512 hex
+* generateCredentials: generate credentials private and public key.
+* generateTransactionBatchBytes: return transaction base64
+* encode: encode buffer, the second parameter is the protobuf scheme that you want to use
+* decode: decode buffer, the second parameter is the protobuf scheme that you want to use
+* decodeBuffer: parse string to buffer, second parameter is format
