@@ -56,7 +56,7 @@ var SawtoothSdk = /** @class */ (function () {
             payloadEncoder: config.transactionEncoder || this.transactionEncoder
         };
     };
-    SawtoothSdk.prototype.generateTransactionBatchBytes = function (adminAddress, payload, config) {
+    SawtoothSdk.prototype.generateTransactionBatchBytes = function (payload, config) {
         var privateKey = config.privateKey || this.credentials.getPrivate();
         var credentials = this.generateCredentials(privateKey);
         var encodedPayload = this.transactionEncoder(payload);
