@@ -98,6 +98,12 @@ var SawtoothSdk = /** @class */ (function () {
         var protobufRoot = this.initProtobuf(jsonNamespace);
         return protobufRoot.decode(encodePayload);
     };
+    SawtoothSdk.prototype.decodeBuffer = function (data, format) {
+        if (data instanceof Buffer) {
+            return data;
+        }
+        return Buffer.from(data, format);
+    };
     SawtoothSdk.prototype.transactionEncoder = function (data) {
         return this.encode(data, 'TransactionPayload');
     };
