@@ -1,6 +1,6 @@
 {
     "name": "sawtooth-sdk-ionic",
-    "version": "0.0.1",
+    "version": "0.0.2",
     "description": "Sawtooth sdk for web, ionic and angular 2",
     "main": "dist/sawtooth-sdk.js",
     "scripts": {

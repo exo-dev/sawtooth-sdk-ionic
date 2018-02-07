@@ -56,7 +56,7 @@ var SawtoothSdk = /** @class */ (function () {
             payloadEncoder: config.transactionEncoder || this.transactionEncoder
         };
     };
-    SawtoothSdk.prototype.generateTransactionBatchBytes = function (adminAddress, payload, config) {
+    SawtoothSdk.prototype.generateTransactionBatchBytes = function (payload, config) {
         var privateKey = config.privateKey || this.credentials.getPrivate();
         var credentials = this.generateCredentials(privateKey);
         var encodedPayload = this.transactionEncoder(payload);
@@ -97,6 +97,12 @@ var SawtoothSdk = /** @class */ (function () {
     SawtoothSdk.prototype.decode = function (encodePayload, jsonNamespace) {
         var protobufRoot = this.initProtobuf(jsonNamespace);
         return protobufRoot.decode(encodePayload);
+    };
+    SawtoothSdk.prototype.decodeBuffer = function (data, format) {
+        if (data instanceof Buffer) {
+            return data;
+        }
+        return Buffer.from(data, format);
     };
     SawtoothSdk.prototype.transactionEncoder = function (data) {
         return this.encode(data, 'TransactionPayload');
