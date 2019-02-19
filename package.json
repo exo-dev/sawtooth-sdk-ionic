@@ -28,7 +28,7 @@
         "buffer": "^5.0.8",
         "crypto-js": "^3.1.9-1",
         "protobufjs": "^6.8.0",
-        "randombytes": "^2.0.5",
+        "randombytes": "^2.1.0",
         "secp256k1": "^3.3.0"
     },
     "devDependencies": {
