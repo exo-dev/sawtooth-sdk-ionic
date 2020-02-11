@@ -26,7 +26,7 @@
     "homepage": "https://github.com/exo-dev/sawtooth-sdk-ionic#readme",
     "dependencies": {
         "buffer": "^5.0.8",
-        "crypto-js": "^3.1.9-1",
+        "crypto-js": "^3.2.1",
         "protobufjs": "^6.8.0",
         "randombytes": "^2.0.5",
         "secp256k1": "^3.3.0"
